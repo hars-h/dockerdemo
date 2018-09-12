@@ -1,0 +1,20 @@
+
+//to pull from github
+
+  docker build --build-arg url=https://github.com/harshanand91/springbootdemo.git\
+  --build-arg project=com.springboot\
+  --build-arg artifactid=demo\
+  --build-arg version=0.0.1-SNAPSHOT\
+  -t nfrankel/spring-petclinic - < Dockerfile
+
+
+
+
+//to copy locally built war file to docker and deploy the same on tomcat
+docker run -it \
+    -p 8080:8080 \
+    -v /Users/Secure/Downloads/demo/target/demo-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war \
+    -v /Users/Secure/Downloads/demo/target/demo-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/ROOT \
+    tomcat
+
+
