@@ -7,7 +7,7 @@
   --build-arg version=0.0.1-SNAPSHOT\
   -t nfrankel/spring-petclinic - < Dockerfile
 
-
+docker run -p <Client Port Number>:<Server Port Number> --name test22 704651c6d198
 
 
 //to copy locally built war file to docker and deploy the same on tomcat
